@@ -3,6 +3,7 @@
     <title>Text Adventure</title>
 </head>
 <body>
+<b>Test</b>
 <?php
 $db_server='localhost';
 $db_user='root';
