@@ -1,9 +1,6 @@
 <html>
-<head>
-    <title>Text Adventure</title>
-</head>
+<head></head>
 <body>
-<b>Test</b>
 
 <?php
 $db_server='localhost';
@@ -16,11 +13,18 @@ if(!$verbindung)
     die("Server kann nicht erreicht werden!");
 if(!mysql_select_db($db_name,$verbindung))
     die("Datenbank kann nicht angesprochen werden!");
-$query="SELECT befehle
-        FROM befehle";
+
+
+$query="SELECT Idbefehle
+        FROM befehle
+        WHERE befehle = {$_GET['befehl']}";
+
+
 $ergebnis=mysql_query($query,$verbindung);
 if(!$ergebnis)
     echo mysql_error();
+
+echo mysql_result($ergebnis,0);
 ?>
 </body>
 </html>
